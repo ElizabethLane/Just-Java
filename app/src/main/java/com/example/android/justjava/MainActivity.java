@@ -26,11 +26,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    int quantity = 1;
     /**
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        int quantity = 2;
         display(quantity);
         displayPrice(quantity * 5);
     }
@@ -39,8 +39,7 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the + button is clocked.
      */
     public void increment(View view){
-        int quantity = 2;
-        quantity = 3;
+        quantity = quantity + 1;
         display(quantity);
     }
 
@@ -48,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the - button is clicked.
      */
     public void decrement(View view){
-        int quantity = 1;
+        quantity = quantity - 1;
         display(quantity);
     }
 
