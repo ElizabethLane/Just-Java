@@ -39,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the + button is clocked.
      */
     public void increment(View view){
-        int quantity = 3;
+        int quantity = 2;
+        quantity = 3;
         display(quantity);
     }
 
