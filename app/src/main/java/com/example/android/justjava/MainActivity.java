@@ -33,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
 
-        displayPrice(quantity * 5);
+        String priceMessage = "Free";
+        displayMessage(priceMessage);
     }
 
     /**
