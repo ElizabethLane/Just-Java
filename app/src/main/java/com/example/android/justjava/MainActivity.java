@@ -20,18 +20,19 @@ import java.text.NumberFormat;
  */
 public class MainActivity extends AppCompatActivity {
 
+    int quantity = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
 
-    int quantity = 1;
     /**
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        display(quantity);
+
         displayPrice(quantity * 5);
     }
 
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the + button is clocked.
      */
     public void increment(View view){
-        quantity = quantity + 1;
+        quantity += 2;
         display(quantity);
     }
 
@@ -67,5 +68,14 @@ public class MainActivity extends AppCompatActivity {
     private void displayPrice(int number) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+    }
+
+
+    /**
+     * This method displays the given text on the screen.
+     */
+    private void displayMessage(String message) {
+        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        priceTextView.setText(message);
     }
 }
