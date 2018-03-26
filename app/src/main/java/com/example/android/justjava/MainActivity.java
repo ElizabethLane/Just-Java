@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
 
-        String priceMessage = "Free";
+        String priceMessage = "Total amount" + quantity;
         displayMessage(priceMessage);
     }
 
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void increment(View view){
         quantity += 2;
-        display(quantity);
+        displayQuantity(quantity);
     }
 
     /**
@@ -50,13 +50,13 @@ public class MainActivity extends AppCompatActivity {
      */
     public void decrement(View view){
         quantity = quantity - 1;
-        display(quantity);
+        displayQuantity(quantity);
     }
 
     /**
      * This method displays the given quantity value on the screen.
      */
-    private void display(int number) {
+    private void displayQuantity(int number) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         quantityTextView.setText("" + number);
     }
