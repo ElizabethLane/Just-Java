@@ -6,6 +6,33 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:text="Toppings"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp"
+        android:paddingLeft="16dp"
+        android:textAllCaps="true"
+        android:textColor="#000000"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="24dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Whipped Cream"
+            android:textSize="16sp"
+            />
+    </LinearLayout>
+
+    <TextView
         android:text="Quantity"
         android:textSize="16sp"
         android:layout_width="wrap_content"
