@@ -15,28 +15,23 @@
         android:textAllCaps="true"
         android:textColor="#000000"
         />
-    <LinearLayout
+
+    <CheckBox
+        android:id="@+id/whipped_cream"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="24dp"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Whipped Cream"
-            android:textSize="16sp"
-            />
-    </LinearLayout>
+        android:layout_marginRight="24dp"
+        android:text="Whipped Cream"
+        android:paddingLeft="24dp"
+        />
+
 
     <TextView
         android:text="Quantity"
         android:textSize="16sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingTop="16dp"
         android:paddingBottom="16dp"
         android:paddingLeft="16dp"
         android:textAllCaps="true"
