@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 import java.text.NumberFormat;
 
@@ -35,11 +36,13 @@ public class MainActivity extends AppCompatActivity {
     public void submitOrder(View view) {
         CheckBox whippedCream = (CheckBox) findViewById(R.id.whipped_cream);
         CheckBox chocolate = (CheckBox) findViewById(R.id.chocolate);
+        EditText name = (EditText) findViewById(R.id.search);
 
+        String userName = name.getText().toString();
         boolean hasWhip = whippedCream.isChecked();
         boolean hasChoc = chocolate.isChecked();
         int price = calculatePrice();
-        String message = createOrderSummary(price, hasWhip, hasChoc);
+        String message = createOrderSummary(price, hasWhip, hasChoc, userName);
         displayMessage(message);
     }
 
@@ -47,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
      * This method displays the order summary
      */
 
-    public String createOrderSummary(int price, boolean whip, boolean choc){
-        return "Name:Kaptain Kunal" + "\nQuantity:" + quantity + "\nTotal:" + price +
+    public String createOrderSummary(int price, boolean whip, boolean choc, String userName){
+        return "Name:" + userName + "\nQuantity:" + quantity + "\nTotal:" + price +
                 "\nThank you!" + "\nHas whipped cream" + whip + "\nHas chocolate" + choc;
     }
 
