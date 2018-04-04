@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         String userName = name.getText().toString();
         boolean hasWhip = whippedCream.isChecked();
         boolean hasChoc = chocolate.isChecked();
-        int price = calculatePrice();
+        int price = calculatePrice(hasWhip, hasChoc);
         String message = createOrderSummary(price, hasWhip, hasChoc, userName);
         displayMessage(message);
     }
@@ -59,8 +59,17 @@ public class MainActivity extends AppCompatActivity {
      * Calculates the price of the order.
      * @return total price
      */
-    private int calculatePrice() {
-        int price = quantity * 5;
+    private int calculatePrice(boolean whip, boolean choc) {
+        int price = 5;
+
+        if (whip){
+            price += 1;
+        }
+        if (choc){
+            price += 2;
+        }
+
+        price = price * 5;
         return price;
     }
 
