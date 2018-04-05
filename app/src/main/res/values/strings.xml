@@ -1,9 +1,33 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Just Java</string>
 
     <!--Header text for the list of toppings [CHAR LIMIT 20]-->
     <string name="toppings">Toppings</string>
 
     <!--Thank you for the order summary-->
+    <string name="has_whip">Has whipped cream?</string>
+
+    <!--Thank you for the order summary-->
     <string name="thank_you">Thank you!</string>
+
+    <!--Adding whipped cream to the order-->
+    <string name="whipped">Whipped Cream?</string>
+
+    <!--Adding chocolate to the order-->
+    <string name="chocolate">Chocolate?</string>
+
+    <!--Quantity of drinks-->
+    <string name="quantity">Quantity</string>
+
+    <!--Order button text-->
+    <string name="order">Order</string>
+
+    <!--Edittext name "hint" for order input-->
+    <string name="name">Name</string>
+
+    <string name="order_summary_name"> Name: <xliff:g id="name" example="Amy">%s</xliff:g></string>
+
+
+
 </resources>
+
