@@ -43,13 +43,14 @@ public class MainActivity extends AppCompatActivity {
         CheckBox chocolate = (CheckBox) findViewById(R.id.chocolate);
         EditText name = (EditText) findViewById(R.id.search);
 
+        String userName = name.getText().toString();
         boolean hasWhip = whippedCream.isChecked();
         boolean hasChoc = chocolate.isChecked();
         int price = calculatePrice(hasWhip, hasChoc);
 
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:")); // only email apps should handle this
-        intent.putExtra(Intent.EXTRA_TEXT, createOrderSummary(price, hasWhip, hasChoc, name));
+        intent.putExtra(Intent.EXTRA_TEXT, createOrderSummary(price, hasWhip, hasChoc, userName));
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
