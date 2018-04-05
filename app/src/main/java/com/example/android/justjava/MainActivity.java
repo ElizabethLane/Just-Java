@@ -55,11 +55,10 @@ public class MainActivity extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
-        }
+    }
 
 //        String message = createOrderSummary(price, hasWhip, hasChoc, userName);
 //        displayMessage(message);
-    }
 
     /**
      * This method displays the order summary
@@ -67,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
     public String createOrderSummary(int price, boolean whip, boolean choc, String userName){
         return "Name:" + userName + "\nQuantity:" + quantity + "\nTotal:" + price +
-                "\nThank you!" + "\nHas whipped cream" + whip + "\nHas chocolate" + choc;
+                "\n" + getString(R.string.thank_you) + "\nHas whipped cream" + whip + "\nHas chocolate" + choc;
     }
 
     /**
@@ -142,8 +141,8 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method displays the given text on the screen.
      */
-    private void displayMessage(String message) {
-        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
-        orderSummaryTextView.setText(message);
-    }
+//    private void displayMessage(String message) {
+//        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
+//        orderSummaryTextView.setText(message);
+//    }
 }
