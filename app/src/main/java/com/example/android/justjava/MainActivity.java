@@ -10,6 +10,8 @@ package com.example.android.justjava;
 
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -41,12 +43,20 @@ public class MainActivity extends AppCompatActivity {
         CheckBox chocolate = (CheckBox) findViewById(R.id.chocolate);
         EditText name = (EditText) findViewById(R.id.search);
 
-        String userName = name.getText().toString();
         boolean hasWhip = whippedCream.isChecked();
         boolean hasChoc = chocolate.isChecked();
         int price = calculatePrice(hasWhip, hasChoc);
-        String message = createOrderSummary(price, hasWhip, hasChoc, userName);
-        displayMessage(message);
+
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+        intent.putExtra(Intent.EXTRA_TEXT, createOrderSummary(price, hasWhip, hasChoc, name));
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+        }
+
+//        String message = createOrderSummary(price, hasWhip, hasChoc, userName);
+//        displayMessage(message);
     }
 
     /**
